@@ -1,0 +1,43 @@
+D.	Analisis Asimptotik
+1.	Tambahkan komentar atau dokumentasi yang menjelaskan kompleksitas waktu dari algoritma pencarian dan pengurutan yang Anda implementasikan.
+Jawaban:
+
+Pencarian Linear (linearSearchByValue dan linearSearchByDescription)
+•	Kompleksitas Waktu: O(n)
+•	Algoritma pencarian linear memiliki kompleksitas waktu linier, di mana n adalah jumlah elemen dalam daftar data.
+•	Ini karena algoritma ini harus memeriksa setiap elemen satu per satu hingga menemukan elemen yang dicari atau mencapai akhir daftar.
+•	Kinerja: Algoritma pencarian linear cocok digunakan untuk daftar data yang tidak terlalu besar. Namun, untuk daftar data besar, kinerja algoritma ini mungkin kurang efisien karena memerlukan waktu yang proporsional dengan jumlah elemen dalam daftar.
+
+Pencarian Biner (binarySearchByValue)
+•	Kompleksitas Waktu: O(n log n) + O(log n) ≈ O(n log n)
+•	Langkah pertama adalah mengurutkan array yang memiliki kompleksitas waktu O(n log n) menggunakan algoritma sort bawaan Java, seperti quicksort.
+•	Langkah kedua adalah pencarian biner dengan kompleksitas waktu O(log n) setelah array diurutkan.
+•	Kinerja: Algoritma pencarian biner lebih efisien daripada pencarian linear untuk daftar data yang besar. Namun, algoritma ini memerlukan array yang diurutkan sebelumnya, yang dapat menambah kompleksitas waktu secara keseluruhan.
+
+Pengurutan (Selection Sort)
+•	Kompleksitas Waktu: O(n^2)
+•	Algoritma selection sort memiliki kompleksitas waktu kuadratik, di mana n adalah jumlah elemen dalam array.
+•	Ini karena algoritma ini memiliki dua loop bersarang, di mana loop dalam digunakan untuk mencari elemen minimum dalam array, dan loop luar untuk mengulangi proses ini hingga seluruh array terurut.
+•	Kinerja: Algoritma selection sort tidak efisien untuk daftar data yang besar karena memiliki kompleksitas waktu kuadratik. Namun, algoritma ini mudah untuk diimplementasikan dan dapat digunakan untuk daftar data yang relatif kecil atau dalam skenario di mana stabilitas algoritma lebih penting daripada efisiensi.
+
+
+2.	Bandingkan dan diskusikan kinerja algoritma yang berbeda.
+Jawaban:
+
+Masing-masing algoritma memiliki kelebihan dan keterbatasan mereka sendiri tergantung pada kebutuhan spesifik dan karakteristik data yang dihadapi. Pencarian linear cocok untuk daftar data kecil atau ketika pengurutan tidak diperlukan. Pencarian biner lebih efisien untuk daftar data yang besar jika data sudah diurutkan. Selection sort sederhana tetapi tidak efisien untuk jumlah data yang besar; algoritma pengurutan lain seperti quicksort atau mergesort biasanya lebih disukai untuk skala yang lebih besar. Berikut penjelasan lebih detailnya:
+
+Pencarian Linear
+•	Kinerja: Algoritma pencarian linear memiliki kinerja yang cukup sederhana. Kompleksitas waktu rata-rata adalah O(n), di mana n adalah jumlah elemen dalam daftar.
+•	Kelebihan: Mudah diimplementasikan dan efisien untuk daftar data yang tidak terlalu besar.
+•	Keterbatasan: Kinerjanya kurang efisien untuk daftar data yang sangat besar karena waktu eksekusi meningkat secara linier dengan jumlah elemen.
+
+Pencarian Biner
+•	Kinerja: Algoritma pencarian biner memiliki kinerja yang lebih baik dibandingkan dengan pencarian linear untuk daftar data yang diurutkan. Kompleksitas waktu rata-rata adalah O(log n), di mana n adalah jumlah elemen dalam daftar.
+•	Kelebihan: Efisien untuk daftar data yang besar karena waktu eksekusi meningkat secara logaritmik dengan jumlah elemen.
+•	Keterbatasan: Memerlukan daftar data yang diurutkan sebelumnya, sehingga memerlukan waktu tambahan untuk pengurutan.
+
+Pengurutan Selection Sort
+•	Kinerja: Algoritma pengurutan selection sort memiliki kinerja yang cukup sederhana. Kompleksitas waktu rata-rata adalah O(n^2), di mana n adalah jumlah elemen dalam daftar.
+•	Kelebihan: Sederhana untuk diimplementasikan dan efisien untuk jumlah elemen yang kecil.
+•	Keterbatasan: Tidak efisien untuk daftar data yang besar karena waktu eksekusi meningkat secara kuadratik dengan jumlah elemen. Juga, tidak stabil, yang berarti elemen-elemen yang sama bisa diubah urutannya.
+
