@@ -1,0 +1,55 @@
+data class Kontak(
+        val name: String,
+        val phoneNumber: String,
+        val email: String
+)
+
+class PengelolaKontak {
+    private val contactList: MutableList<Kontak> = mutableListOf()
+
+    // Metode untuk menambah kontak
+    fun addContact(kontak: Kontak) {
+        contactList.add(kontak)
+    }
+
+    // Metode untuk menghapus kontak berdasarkan nama
+    fun removeContactByName(name: String) {
+        val kontak = contactList.find { it.name == name }
+        kontak?.let { contactList.remove(it) }
+    }
+
+    // Metode untuk menampilkan semua kontak
+    fun displayAllContacts() {
+        println("Daftar Kontak:")
+        contactList.forEachIndexed { index, kontak ->
+            println("${index + 1}. ${kontak.formatContactInfo()}")
+        }
+    }
+}
+
+// C. Visibility Control
+// Atribut dan metode dalam kelas Kontak dan ContactManager sudah menggunakan visibility control secara default,
+// dengan atribut yang tidak perlu diakses dari luar kelas dibuat private.
+
+// D. Extension Function
+fun Kontak.formatContactInfo(): String {
+    return "Nama: $name, Nomor Telepon: $phoneNumber, Email: $email"
+}
+
+fun main() {
+    val contactManager = PengelolaKontak()
+
+    // Menambahkan beberapa kontak
+    contactManager.addContact(Kontak("John Doe", "123456789", "john@example.com"))
+    contactManager.addContact(Kontak("Jane Smith", "987654321", "jane@example.com"))
+
+    // Menampilkan semua kontak
+    contactManager.displayAllContacts()
+
+    // Menghapus kontak dengan nama tertentu
+    contactManager.removeContactByName("John Doe")
+
+    // Menampilkan kembali semua kontak setelah penghapusan
+    println("\nSetelah penghapusan kontak John Doe:")
+    contactManager.displayAllContacts()
+}
