@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SimpleAppWeek10</string>
+    <string name="profile">Profile</string>
+    <string name="asep_sutisna">Asep Sutisna</string>
+    <string name="keamanan_amp_akun"><![CDATA[Keamanan & Akun]]></string>
+    <string name="pengaturan">Pengaturan</string>
+    <string name="keluar">Keluar</string>
+    <string name="edit_profile">Edit Profile</string>
+</resources>
